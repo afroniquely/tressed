@@ -3,7 +3,6 @@ Join in a community of likeminded naturals, ready to get their healthiest head o
 
 # Stay on the path for healthy tresses.
 ![](http://i.giphy.com/3o6ZtdDFk90KVFDrbO.gif)
-![]( http://i.giphy.com/wpKsEIRY8t2M0.gif)
 
 
 ## In a nutshell: 
@@ -39,3 +38,7 @@ Roadblocks:
 
 ### Sources Used:
 Gifs via [Giphy.com](http://Giphy.com)
+
+![]( http://i.giphy.com/wpKsEIRY8t2M0.gif)
+Be free, be unique, be Afroniquely You!
+Sasha-Shae
