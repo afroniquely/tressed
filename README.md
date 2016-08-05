@@ -16,7 +16,7 @@ Join in a community of likeminded naturals, ready to get their healthiest head o
 ## Mockup of the Web App:
 
 ![alt text][logo]
-[logo]: http://content.freshmedleydesigns.com/media/images/FabTextureWireframe.jpg "Fabulously Textured Web App Wireframe"
+[logo]: http://content.freshmedleydesigns.com/media/images/FabTextureWireframe.png "Fabulously Textured Web App Wireframe"
 
 ## Technologies Used:
 * Javascript
