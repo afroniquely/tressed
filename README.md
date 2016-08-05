@@ -40,5 +40,6 @@ Roadblocks:
 Gifs via [Giphy.com](http://Giphy.com)
 
 ![]( http://i.giphy.com/wpKsEIRY8t2M0.gif)
+
 Be free, be unique, be Afroniquely You!
 Sasha-Shae
