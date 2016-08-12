@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 
 # Devise Auth tool
-# gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.2'
 
 # Simple Forms
 gem 'simple_form', '~> 3.2', '>= 3.2.1'

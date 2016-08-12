@@ -2,7 +2,7 @@
   %h1 All Posts
 
   - @posts.each do |post|
-    %h3= post.title
+    %h3= link_to post.title, post
 
     %p
     Published:
