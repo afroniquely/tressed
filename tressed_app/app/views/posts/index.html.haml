@@ -1,0 +1,13 @@
+%div.row
+  %h1 All Posts
+
+  - @posts.each do |post|
+    %h3= post.title
+
+    %p
+    Published:
+    = time_ago_in_words(post.created_at)
+
+
+%div.row
+  %p= link_to "Create New Post", new_post_path
