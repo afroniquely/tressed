@@ -5,13 +5,14 @@
 
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
 
-    %title= content_for?(:title) ? yield(:title) : "Untitled"
+    %title= content_for?(:title) ? yield(:title) : "Tressed App"
 
     = stylesheet_link_tag "application"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tag
 
   %body
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    %p.notice= notice
+    %p.alert= alert
+
     = yield
