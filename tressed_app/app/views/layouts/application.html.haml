@@ -12,6 +12,14 @@
     = csrf_meta_tag
 
   %body
+    #buttons
+      - if user_signed_in?
+        = link_to "New Post", new_post_path
+       - else
+        = link_to "Join Now", new_user_registration_path
+        = link_to "Login", new_user_session_path
+
+
     %p.notice= notice
     %p.alert= alert
 
