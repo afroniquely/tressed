@@ -3,19 +3,37 @@
 %head
   %title Tressed App
 %body
-%header.row
-  %h1
-    = link_to "Tressed App", root_path
-  %p.tagline where we discover the beauty of Natural Hair
+%header.top-bar
+  %h3#SiteTitle.top-bar-left
+    = link_to "Tressed", root_path
 
-%div.row#content
-  %p Every hair journey is different, unique and beautiful. While our textures may not all be alike, our support and bonds can be one. Join us to have the
-  %div#video
-    %p.videoresp
-      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/VJaDJtK_8xM?rel=0&controls=0&showinfo=0", :width => "640"}
+  %div#useract.top-bar-right
+    - if user_signed_in?
+      = link_to '<button type="button" class="success button">All Posts</button>'.html_safe, posts_path
+      = link_to '<button type="button" class="success button">New Post</button>'.html_safe, new_post_path
+      = link_to('<button type="button" class="danger button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
+    - else
+      = link_to '<button type="button" class="secondary button">HOME</button>'.html_safe, root_path
+      = link_to '<button type="button" class="success button">JOIN NOW</button>'.html_safe, new_user_registration_path
+      = link_to '<button type="button" class="success button">LOGIN</button>'.html_safe, new_user_session_path
 
+/Add Main Content with Form and
+
+%div#video.row
+  %div.videoresp
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/VJaDJtK_8xM?rel=0&controls=0&showinfo=0", :width => "640"}
+  %blockquote.fancy Every hair journey is different, unique and beautiful. While our textures may not all be alike, our support and bonds can be one. Join us to have the
+
+%div#joinus.row
+  %div.row
+    %h2 Inside peek at Tressed
   #insiders
-    %img{:src => "http://lorempixel.com/output/nature-q-c-250-250-4.jpg"}/
-    %img{:src => "http://lorempixel.com/output/nature-q-c-250-250-5.jpg"}/
+    %img{:src => "http://placehold.it/350x150"}/
+    %img{:src => "http://placehold.it/350x150"}/
+
+  #joinup
+    = link_to '<button type="button" class="success button">JOIN NOW</button>'.html_safe, new_user_registration_path
+
+
 
 

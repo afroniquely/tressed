@@ -16,17 +16,65 @@
 
  */
 
-.notice, .alert {
-    font-size: 18px;
-    text-transform: uppercase;
-    text-align: center;
-    color: #800080;
-    font-weight: 900;
+@import 'https://fonts.googleapis.com/css?family=Kumar+One+Outline|Merriweather:400,400i,700,700i|Montserrat:400,700';
+
+body {
+  font-family: 'Merriweather', serif;
 }
 
-.notice, .alert p{
-  padding: 10px;
+#notifications {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 600;
+  background: rgba(216, 218, 6, 0.87);
+}
 
+#notifications p {
+  padding: 1.3rem 0;
+  text-align: center;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+
+}
+
+.top-bar{
+  background-color: #E57255;
+  margin-bottom: 10px;
+}
+
+#SiteTitle a {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Kumar One Outline', cursive;
+  padding-left: 100px;
+
+}
+
+#useract{
+  text-align: center;
+}
+
+#useract a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#video{
+  margin: 0 auto;
+  width: 60%;
+}
+
+.fancy {
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  font-size: 20px;
 }
 
 /* Start XOMISSE Responsive Video */

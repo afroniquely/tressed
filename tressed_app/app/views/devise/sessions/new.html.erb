@@ -1,3 +1,20 @@
+<header class="top-bar">
+  <h3 class="top-bar-left" id="SiteTitle">
+      <%= link_to "Tressed", root_path %>
+  </h3>
+  <div class="top-bar-right" id="useract">
+    <% if user_signed_in? %>
+      <%= link_to '<button type="button" class="success button">All Posts</button>'.html_safe, posts_path %>
+      <%= link_to '<button type="button" class="success button">New Post</button>'.html_safe, new_post_path %>
+      <%= link_to('<button type="button" class="danger button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete) %>
+    <% else %>
+      <%= link_to '<button type="button" class="secondary button">HOME</button>'.html_safe, root_path %>
+      <%= link_to '<button type="button" class="success button">JOIN NOW</button>'.html_safe, new_user_registration_path %>
+      <%= link_to '<button type="button" class="success button">LOGIN</button>'.html_safe, new_user_session_path %>
+    <% end %>
+  </div>
+</header>
+
 <div class="row">
 <h2>Login</h2>
 

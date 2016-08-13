@@ -9,30 +9,34 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
 
   <body>
 
-  <div id="buttons" class="row">
-    <% if user_signed_in? %>
-
-    <%= link_to '<button type="button" class="success button">All Posts</button>'.html_safe, posts_path %>
-     <%= link_to '<button type="button" class="success button">New Post</button>'.html_safe, new_post_path %>
-      <%= link_to('<button type="button" class="success button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)%>
-    <% else %>
-      <%= link_to '<button type="button" class="success button">HOME</button>'.html_safe, root_path %>
-
-      <%= link_to '<button type="button" class="success button">JOIN NOW</button>'.html_safe, new_user_registration_path %>
-
-      <%= link_to '<button type="button" class="success button">LOGIN</button>'.html_safe, new_user_session_path %>
-
-    <% end %>
-  </div>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if notice %>
+    <div id="notifications">
+      <p class="notice"><%= notice %></p>
+    </div>
+  <% elsif alert %>
+    <div id="notifications">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
 
     <%= yield %>
 
+  <script>
+    $(document).ready(
+      function fadeThemOut(){
+        setTimeOut(function(){
+          $("#notifications").fadeOut("slow", function(){
+          $(this).remove();
+          })
+        },3500);
+      }
+    fadeThemOut()
+    );
+  </script>
   </body>
 </html>
