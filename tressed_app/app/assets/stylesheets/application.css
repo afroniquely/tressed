@@ -16,6 +16,18 @@
 
  */
 
+.notice, .alert {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #800080;
+    font-weight: 900;
+}
+
+.notice, .alert p{
+  padding: 10px;
+
+}
 
 /* Start XOMISSE Responsive Video */
 .videoresp {

@@ -4,14 +4,16 @@
   %title Tressed App
 %body
 %header.row
-  %h1= "Tressed App"
+  %h1
+    = link_to "Tressed App", root_path
   %p.tagline where we discover the beauty of Natural Hair
 
 %div.row#content
   %p Every hair journey is different, unique and beautiful. While our textures may not all be alike, our support and bonds can be one. Join us to have the
-  %div.videoresp#video
-    %p
-      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "720", :src => "https://www.youtube.com/embed/VJaDJtK_8xM", :width => "1280"}
+  %div#video
+    %p.videoresp
+      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/VJaDJtK_8xM?rel=0&controls=0&showinfo=0", :width => "640"}
+
   #insiders
     %img{:src => "http://lorempixel.com/output/nature-q-c-250-250-4.jpg"}/
     %img{:src => "http://lorempixel.com/output/nature-q-c-250-250-5.jpg"}/

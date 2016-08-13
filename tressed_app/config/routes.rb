@@ -1,10 +1,22 @@
+# Rails.application.routes.draw do
+#   devise_for :users
+#   # get 'welcome/index'
+
+#   resources :posts
+
+#   root 'welcome#index'
+
+#   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+# end
+
 Rails.application.routes.draw do
-  devise_for :users
-  # get 'welcome/index'
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
   resources :posts
 
-  root 'welcome#index'
+  get '/posts' => 'posts#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'welcome#index'
 end
