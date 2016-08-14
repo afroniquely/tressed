@@ -6,7 +6,7 @@
     %div#background
       %header.home-top-bar.cf
         %h3#SiteTitleHome.top-bar-left
-          = link_to "Tressed", root_path
+          = link_to 'Tressed', root_path
         #homelinks.top-bar-right
           - if user_signed_in?
             = link_to "About", about_path

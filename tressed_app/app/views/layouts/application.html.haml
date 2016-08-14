@@ -1,26 +1,18 @@
 !!! 5
-%html{ :lang => "en" }
+%html{:lang => "en"}
   %head
-    %meta{ :charset => "utf-8" }
-
-    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
-
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title= content_for?(:title) ? yield(:title) : "Tressed App"
-
-    = stylesheet_link_tag "application"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = csrf_meta_tag
-
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.ico'
   %body
-    #buttons
-      - if user_signed_in?
-        = link_to "New Post", new_post_path
-       - else
-        = link_to "Join Now", new_user_registration_path
-        = link_to "Login", new_user_session_path
-
-
-    %p.notice= notice
-    %p.alert= alert
-
+    - if notice
+      #notifications
+        %p.notice= notice
+    - elsif alert
+      #notifications
+        %p.alert= alert
     = yield
