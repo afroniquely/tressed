@@ -1,8 +1,7 @@
 %header.top-bar
   %h3#SiteTitle.top-bar-left
     = link_to "Tressed", root_path
-
-  %div#useract.top-bar-right
+  #useract.top-bar-right
     - if user_signed_in?
       = link_to '<button type="button" class="success button">All Posts</button>'.html_safe, posts_path
       = link_to '<button type="button" class="success button">New Post</button>'.html_safe, new_post_path
@@ -10,11 +9,13 @@
     - else
       = link_to '<button type="button" class="success button">JOIN NOW</button>'.html_safe, new_user_registration_path
       = link_to '<button type="button" class="success button">LOGIN</button>'.html_safe, new_user_session_path
-
-%div.row
-  Now Editing
-  %h2= @post.title
-
-  = render 'form'
-
-  = link_to "Cancel", post_path
+.row
+  %h2 Login
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-inputs
+      = f.input :email, required: false, autofocus: true
+      = f.input :password, required: false
+      = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+    .form-actions
+      = f.button :submit, "LOGIN"
+  = render "devise/shared/links"

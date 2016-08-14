@@ -1,17 +1,42 @@
-%header.top-bar
-  %h3#SiteTitle.top-bar-left
-    = link_to "Tressed", root_path
+%body
+  %div#background
+    %header.home-top-bar.cf
+      %h3#SiteTitleHome.top-bar-left
+        = link_to "Tressed", root_path
+      #homelinks.top-bar-right
+        - if user_signed_in?
+          = link_to "About", about_path
+          = link_to "Update Login", edit_user_registration_path
+          = link_to('Logout', destroy_user_session_path, :method => :delete)
+        - else
+          = link_to "About", about_path
+    #intro.row
+      - if user_signed_in?
+        %h2.fancy About Us
+        %h3.fancy
+          Tressed is a member community created by Afroniquely You Blogazine, that aims to bridge the gap between natural hair care and society's taboo.
+          %br/
+        %p watch the video documentary below
+        %videobtn
+          %a.btn.trigger{:href => "javascript:;"} Watch Now!
+          .modal-wrapper
+            .modal
+              .head
+                %a.btn-close.trigger{:href => "javascript:;"}
+              .content
+                %iframe{:frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/VJaDJtK_8xM?rel=0&controls=0&showinfo=0&autoplay=0", :width => "641"}
 
-  %div#useract.top-bar-right
-    - if user_signed_in?
-      = link_to '<button type="button" class="success button">All Posts</button>'.html_safe, posts_path
-      = link_to '<button type="button" class="success button">New Post</button>'.html_safe, new_post_path
-      = link_to('<button type="button" class="danger button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
-    - else
-      = link_to '<button type="button" class="secondary button">HOME</button>'.html_safe, root_path
-      = link_to '<button type="button" class="success button">JOIN NOW</button>'.html_safe, new_user_registration_path
-      = link_to '<button type="button" class="success button">LOGIN</button>'.html_safe, new_user_session_path
-%div.row
-  %h1 About Us
+      - else
+        %h3.fancy
+          Tressed is a member community created by Afroniquely You Blogazine, that aims to bridge the gap between natural hair care and society's taboo.
+          %br/
+          Welcome to Tressed!
+        %div#useracted
+          = link_to '<button type="button" class="highlight button">JOIN US NOW</button>'.html_safe, new_user_registration_path
+          %p.blurbs
+            already a member?
+            = link_to "login", new_user_session_path
 
-  %p Tressed is a member community created by Afroniquely You Blogazine, that aims to bridge the gap between natural hair care and society's taboo.
+
+
+

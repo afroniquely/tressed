@@ -19,7 +19,9 @@
 @import 'https://fonts.googleapis.com/css?family=Kumar+One+Outline|Merriweather:400,400i,700,700i|Montserrat:400,700';
 @import 'normalize';
 
-/*CLEARFIX*/
+/*====================================
+  CLEARFIX
+=====================================*/
 .cf:before, .cf:after {
   content: " ";
   display: table;
@@ -28,32 +30,87 @@
   clear: both;
 }
 
-/*ALL THE COLORS*/
+/*====================================
+  COLORS AND DEFAULTS
+=====================================*/
+$teal: #57CAC7;
+$pink: #e557bf;
+$gold: #daa520;
+$purple: #800080;
+
+
 
 body {
   font-family: 'Merriweather', serif;
 }
 
-button.hibye.button {
-  background-color: salmon;
-  color: black;
-  border-radius: 25px;
+.blurbs{
   font-family: 'Montserrat', sans-serif;
-  padding: 1rem 2rem;
+  font-weight: 400;
+  font-size: .6rem;
+  text-transform: uppercase;
+  color: black;
+  a {
+    color: $teal;
+  }
 }
 
-button.highlight.button {
-  background-color: salmon;
-  color: black;
+input.button{
+    margin-top: 1rem;
+    border-radius: 25px;
+    background-color: $purple;
+    font-family: 'Montserrat', sans-serif;
+    &:hover{
+    background: darken($teal, 9%);
+    }
+  }
+button.hibye.button {
+  background-color: $teal;
+  color: white;
   border-radius: 25px;
   font-family: 'Montserrat', sans-serif;
   padding: 1rem 2rem;
   &:hover{
-    background: darken(salmon, 7.5%);
+    background: darken($teal, 8.5%);
+    color: black;
   }
 }
 
-/*FLASH NOTICES*/
+button.hibye2.button {
+  background-color: $purple;
+  color: white;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem 2rem;
+  &:hover{
+    background: darken($purple, 8.5%);
+    color: $teal;
+  }
+}
+
+button.highlight.button {
+  background-color: $pink;
+  color: white;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem 2rem;
+  &:hover{
+    background: darken($pink, 8.5%);
+    color: $purple;
+  }
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: $gold;
+    &:hover{
+    color: $purple;
+  }
+}
+/*====================================
+  STYLE THE FLASH NOTICES
+=====================================*/
 #notifications {
   position: absolute;
   top: 0;
@@ -71,7 +128,9 @@ button.highlight.button {
   color: #fff;
 }
 
-/*HOMEPAGE RELATED STYLING*/
+/*====================================
+  ALL WELCOME PAGE STYLES
+=====================================*/
 #background {
   background: url("home_bg2.jpg");
   -webkit-background-size: cover;
@@ -84,7 +143,6 @@ button.highlight.button {
 }
 
 .home-top-bar{
-  /*background-color: rgba(229, 116, 87, 0.68);*/
   margin-bottom: 20px;
   height: 60px;
 }
@@ -93,12 +151,15 @@ button.highlight.button {
   padding-left: 5rem;
   margin-top: 2rem;
   a{
-    color: #57CAC7;
+    color: $teal;
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     font-family: 'Kumar One Outline', cursive;
+    &:hover{
+      color: darken(purple, 7.5%);
+    }
   }
 }
 
@@ -108,8 +169,13 @@ button.highlight.button {
   a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    font-size: .75rem;
     text-transform: uppercase;
     color: black;
+    margin-left: 1rem;
+    &:hover{
+      color: darken($purple, 7.5%);
+    }
   }
 }
 
@@ -139,10 +205,12 @@ h3.fancy{
   margin-top: 6rem;
 }
 
-/*ALL OTHER PAGES RELATED STYLING*/
+/*====================================
+  ALL THE OTHER PAGE STYLES
+=====================================*/
 
 .top-bar{
-  background-color: #E57255;
+  background-color: $pink;
   margin-bottom: 10px;
 }
 
@@ -156,6 +224,22 @@ h3.fancy{
   padding-left: 100px;
 }
 
+.top-bar-right {
+  margin-right: 2rem;
+  a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: .75rem;
+    text-transform: uppercase;
+    color: black;
+    margin-left: 1rem;
+    &:hover{
+      color: darken($purple, 7.5%);
+    }
+  }
+}
+
+
 #useract{
   text-align: center;
 }
@@ -166,9 +250,127 @@ h3.fancy{
   text-transform: uppercase;
   color: white;
 }
+h3.postTitles a {
+  font-size: 1.4rem;
+}
 
+textarea {
+  height: 300px;
+}
 
-/* Start XOMISSE Responsive Video */
+/*====================================
+  Modal Window styles
+=====================================*/
+/*.blur{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}*/
+
+a.btn{
+  width:150px;
+  display:inline-block;
+  margin: 0 auto;
+  padding: 1rem 0;
+  font:1.125em 'Montserrat', sans-serif;
+  font-weight:700;
+  text-align:center;
+  text-decoration:none;
+  text-transform: uppercase;
+  color:#fff;
+  border-radius:25px;
+  background: $teal;
+}
+
+.modal-wrapper{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0; left:0;
+  background:rgba(255,257,153,0.75);
+  visibility:hidden;
+  opacity:0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.modal-wrapper.open{
+  opacity:1;
+  visibility:visible;
+}
+
+.modal{
+  width:700px;
+  height:500px;
+  display:block;
+  margin:50% 0 0 -300px;
+  position:relative;
+  top:50%; left:50%;
+  background:#fff;
+  opacity:0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-wrapper.open .modal{
+  margin-top:-200px;
+  opacity:1;
+}
+
+.head{
+  width:100%;
+  height:40px;
+  padding:1.5em 5%;
+  overflow:hidden;
+  background:$teal;
+}
+
+.btn-close{
+  width:32px;
+  height:32px;
+  display:block;
+  float:right;
+}
+
+.btn-close::before, .btn-close::after{
+  content:'';
+  width:32px;
+  height:6px;
+  display:block;
+  background:#fff;
+}
+
+.btn-close::before{
+  margin-top:12px;
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+
+.btn-close::after{
+  margin-top:-6px;
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+}
+
+.content{
+  padding:5%;
+  width: 75%;
+}
+
+/*====================================
+  Start XOMISSE Responsive Video
+=====================================*/
+
 .videoresp {
   position: relative;
   padding-bottom: 56.25%;

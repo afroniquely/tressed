@@ -10,11 +10,14 @@
     - else
       = link_to '<button type="button" class="success button">JOIN NOW</button>'.html_safe, new_user_registration_path
       = link_to '<button type="button" class="success button">LOGIN</button>'.html_safe, new_user_session_path
-
 %div.row
-  Now Editing
+- @posts.each do |post|
+  %h1 Posts by
+    = post.user.email
   %h2= @post.title
+  %p= @post.content
+  = link_to "Edit", edit_post_path(@post)
+  = link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you positive about this?"}
+  = link_to "Back", :back
 
-  = render 'form'
 
-  = link_to "Cancel", post_path
