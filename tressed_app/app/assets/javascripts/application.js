@@ -17,15 +17,8 @@
 
 $(function(){ $(document).foundation(); });
 
- $(document).ready(
-  function fadeThemOut(){
-    setTimeOut(function(){
-      $("#notifications").fadeOut("slow", function(){
-      $(this).remove();
-      })
-    },3500);
-  }
-    fadeThemOut()
-  );
-
-
+$(document).ready(function(){
+    $("#notifications").fadeOut(4000, function(){
+        $(this).remove();
+    });
+});

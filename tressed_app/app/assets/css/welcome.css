@@ -1,0 +1,12 @@
+.top-bar {
+  background-color: #E57255;
+  margin-bottom: 10px; }
+
+#SiteTitle a {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Kumar One Outline', cursive;
+  padding-left: 100px; }

@@ -17,11 +17,43 @@
  */
 
 @import 'https://fonts.googleapis.com/css?family=Kumar+One+Outline|Merriweather:400,400i,700,700i|Montserrat:400,700';
+@import 'normalize';
+
+/*CLEARFIX*/
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+
+/*ALL THE COLORS*/
 
 body {
   font-family: 'Merriweather', serif;
 }
 
+button.hibye.button {
+  background-color: salmon;
+  color: black;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem 2rem;
+}
+
+button.highlight.button {
+  background-color: salmon;
+  color: black;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem 2rem;
+  &:hover{
+    background: darken(salmon, 7.5%);
+  }
+}
+
+/*FLASH NOTICES*/
 #notifications {
   position: absolute;
   top: 0;
@@ -37,8 +69,77 @@ body {
   font-size: 1.25rem;
   font-weight: bold;
   color: #fff;
-
 }
+
+/*HOMEPAGE RELATED STYLING*/
+#background {
+  background: url("home_bg2.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  text-align: center;
+}
+
+.home-top-bar{
+  /*background-color: rgba(229, 116, 87, 0.68);*/
+  margin-bottom: 20px;
+  height: 60px;
+}
+
+#SiteTitleHome {
+  padding-left: 5rem;
+  margin-top: 2rem;
+  a{
+    color: #57CAC7;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Kumar One Outline', cursive;
+  }
+}
+
+#homelinks.top-bar-right {
+  margin-right: 2rem;
+  margin-top: 2rem;
+  a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+  }
+}
+
+.fancy {
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  color: black;
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+}
+
+h2.fancy{
+  font-size: 3.5rem;
+}
+
+h3.fancy{
+  font-size: 2rem;
+}
+
+#intro{
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 60%;
+}
+
+#useracted {
+  margin-top: 6rem;
+}
+
+/*ALL OTHER PAGES RELATED STYLING*/
 
 .top-bar{
   background-color: #E57255;
@@ -53,7 +154,6 @@ body {
   text-align: center;
   font-family: 'Kumar One Outline', cursive;
   padding-left: 100px;
-
 }
 
 #useract{
@@ -64,18 +164,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
+  color: white;
 }
 
-#video{
-  margin: 0 auto;
-  width: 60%;
-}
-
-.fancy {
-  font-family: 'Merriweather', serif;
-  font-style: italic;
-  font-size: 20px;
-}
 
 /* Start XOMISSE Responsive Video */
 .videoresp {

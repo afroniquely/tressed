@@ -1,39 +1,38 @@
-!!! 5
+!!!
 %html
-%head
-  %title Tressed App
-%body
-%header.top-bar
-  %h3#SiteTitle.top-bar-left
-    = link_to "Tressed", root_path
+  %head
+    %title Tressed App
+  %body
+    %div#background
+      %header.home-top-bar.cf
+        %h3#SiteTitleHome.top-bar-left
+          = link_to "Tressed", root_path
+        #homelinks.top-bar-right
+          = link_to "About", about_path
+          = link_to('Logout', destroy_user_session_path, :method => :delete)
+      #intro.row
+        - if user_signed_in?
+          %h2.fancy
+            Hey there gorgeous! Welcome back to Tressed!
+            %br/
+          %p Share about your hair journey, what's new?
 
-  %div#useract.top-bar-right
-    - if user_signed_in?
-      = link_to '<button type="button" class="success button">All Posts</button>'.html_safe, posts_path
-      = link_to '<button type="button" class="success button">New Post</button>'.html_safe, new_post_path
-      = link_to('<button type="button" class="danger button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
-    - else
-      = link_to '<button type="button" class="secondary button">HOME</button>'.html_safe, root_path
-      = link_to '<button type="button" class="success button">JOIN NOW</button>'.html_safe, new_user_registration_path
-      = link_to '<button type="button" class="success button">LOGIN</button>'.html_safe, new_user_session_path
+        - else
+          %h3.fancy
+            Every hair journey is different, unique and beautiful. While our textures may not all be alike, our support and bonds can be one.
+            %br/
+            Welcome to Tressed!
 
-/Add Main Content with Form and
+          %videobtn
+            %p watch the video
 
-%div#video.row
-  %div.videoresp
-    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/VJaDJtK_8xM?rel=0&controls=0&showinfo=0", :width => "640"}
-  %blockquote.fancy Every hair journey is different, unique and beautiful. While our textures may not all be alike, our support and bonds can be one. Join us to have the
+      %div#useracted
+        - if user_signed_in?
+          = link_to '<button type="button" class="highlight button">Create a New Post</button>'.html_safe, new_post_path
 
-%div#joinus.row
-  %div.row
-    %h2 Inside peek at Tressed
-  #insiders
-    %img{:src => "http://placehold.it/350x150"}/
-    %img{:src => "http://placehold.it/350x150"}/
+          %p
+          = link_to "All Posts", posts_path
 
-  #joinup
-    = link_to '<button type="button" class="success button">JOIN NOW</button>'.html_safe, new_user_registration_path
-
-
-
-
+        - else
+          = link_to '<button type="button" class="highlight button">JOIN NOW</button>'.html_safe, new_user_registration_path
+          = link_to '<button type="button" class="hibye button">LOGIN</button>'.html_safe, new_user_session_path
