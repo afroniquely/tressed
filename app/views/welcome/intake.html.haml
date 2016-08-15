@@ -1,1 +1,35 @@
-research.html.haml
+!!!
+%html
+  %head
+    %title Tressed App - User Intake
+  %body
+    %div#background
+      %header.home-top-bar.cf
+        %h3#SiteTitleHome.top-bar-left
+          = link_to 'Tressed', root_path
+        #homelinks.top-bar-right
+          - if user_signed_in?
+            = link_to "About", about_path
+            = link_to "Update Login", edit_user_registration_path
+            = link_to('Logout', destroy_user_session_path, :method => :delete)
+          - else
+            = link_to "About", about_path
+      #intro.row
+        - if user_signed_in?
+          %h2.fancy
+            Tressed Hair Care Profile!
+          %p kindy fill out the form below to get better recommendations for your hair care journey.
+          %br/
+          %a.typeform-share.link.hibye2{"data-mode" => "1", :href => "https://freshmedley.typeform.com/to/GVAcca", :target => "_blank"} Launch me!
+          :javascript
+            (function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()
+
+        - else
+          %h3.fancy
+            Please Login to fill the hair care profile
+            %br/
+          = link_to '<button type="button" class="highlight button">JOIN NOW</button>'.html_safe, new_user_registration_path
+          = link_to '<button type="button" class="hibye button">LOGIN</button>'.html_safe, new_user_session_path
+
+
+

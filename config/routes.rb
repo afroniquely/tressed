@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'welcome#about'
 
+  get '/intake' => 'welcome#intake'
+
   root 'welcome#index'
 end
