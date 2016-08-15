@@ -41,9 +41,6 @@ Join in a community of likeminded naturals, ready to get their healthiest head o
   * [Pygments.rb](https://github.com/tmm1/pygments.rb)
   * [Font Awesome SASS](https://github.com/FortAwesome/font-awesome-sass)
 
-# Adds Font Awesome
-gem 'font-awesome-sass'
-
 ## Approach Taken and Conflict Resolutions
 
 I had a slight issue with getting my fadeOut function to work, but after much trial and error and testing it finally works!
