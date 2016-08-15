@@ -25,12 +25,12 @@ Join in a community of likeminded naturals, ready to get their healthiest head o
 [logo]: http://content.freshmedleydesigns.com/media/images/FabTextureWireframe.png "Fabulously Textured Web App Wireframe"
 
 ## Technologies Used:
-* Javascript
-* CSS
+* JQuery
+* CSS / SCSS
 * HTML
-* Skeleton Framework
+* Zurb Foundation 5
 * Ruby on Rails
-* AJAX
+* HAML
 
 ####Implemented Ruby Gems:
   * [Devise](https://github.com/plataformatec/devise)
@@ -46,11 +46,11 @@ gem 'font-awesome-sass'
 
 ## Approach Taken and Conflict Resolutions
 
-
-Roadblocks: 
+I had a slight issue with getting my fadeOut function to work, but after much trial and error and testing it finally works!
 
 ## Things that didn't work
-* Can't currently get flash notices to fadeOut via JQuery
+* Getting the blog post forms to actually show a markdown editor so the user is able to easily create a post
+* See the issues for more.
 
 
 ### Sources Used:
