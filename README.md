@@ -37,6 +37,12 @@ Join in a community of likeminded naturals, ready to get their healthiest head o
   * [Simple Form](https://github.com/plataformatec/simple_form)
   * [HAML](http://haml.info)
   * [Zurb Foundation for Rails](https://github.com/zurb/foundation-rails)
+  * [Redcarpet](https://github.com/vmg/redcarpet)
+  * [Pygments.rb](https://github.com/tmm1/pygments.rb)
+  * [Font Awesome SASS](https://github.com/FortAwesome/font-awesome-sass)
+
+# Adds Font Awesome
+gem 'font-awesome-sass'
 
 ## Approach Taken and Conflict Resolutions
 
