@@ -45,11 +45,11 @@ Roadblocks:
 
 ## Things that didn't work
 * Can't currently get flash notices to fadeOut via JQuery
-* 
 
 
 ### Sources Used:
-Gifs via [Giphy.com](http://Giphy.com)
+* Gifs via [Giphy.com](http://Giphy.com)
+* Markdown help via [Lepture](http://lab.lepture.com/editor/markdown)
 
 ![]( http://i.giphy.com/wpKsEIRY8t2M0.gif)
 
