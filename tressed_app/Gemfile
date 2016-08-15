@@ -25,6 +25,13 @@ gem 'devise', '~> 4.2'
 # Simple Forms
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
+# Markdown Support
+gem 'redcarpet'
+gem 'pygments.rb', '~> 0.6.3'
+
+# Adds Font Awesome
+gem 'font-awesome-sass'
+
 #Foundation Framework
 gem 'foundation-rails'
 

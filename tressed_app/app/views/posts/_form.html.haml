@@ -1,4 +1,21 @@
 = simple_form_for @post do |f|
-  = f.input :title
-  = f.input :content
+  - if @post.errors.any?
+    %h2
+      = pluralize(@post.errors.count, "error")
+      prevented this post from saving:
+    %ul
+      - @post.errors.full_messages.each do |msg|
+        %li= msg
+  = f.label :title, "Journal Title"
+  %br/
+  = f.text_field :title
+  %br/
+  = f.label :content, "Write your journal entry here"
+  %br/
+  .blurbs this form accepts
+  %a.blurblink{:href => "http://lab.lepture.com/editor/markdown", :target => "_blank"} markdown
+  %br/
+  = f.text_area :content
+  %br/
+  %br/
   = f.button :submit

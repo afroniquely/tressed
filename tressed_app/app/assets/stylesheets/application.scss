@@ -18,6 +18,8 @@
 
 @import 'https://fonts.googleapis.com/css?family=Kumar+One+Outline|Merriweather:400,400i,700,700i|Montserrat:400,700';
 @import 'normalize';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 /*====================================
   CLEARFIX
@@ -50,6 +52,17 @@ body {
   font-size: .6rem;
   text-transform: uppercase;
   color: black;
+  a {
+    color: $teal;
+  }
+}
+
+.blurblink{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: .6rem;
+  text-transform: uppercase;
+  display: inline-block;
   a {
     color: $teal;
   }
