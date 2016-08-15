@@ -43,7 +43,7 @@ Join in a community of likeminded naturals, ready to get their healthiest head o
 
 ## Approach Taken and Conflict Resolutions
 
-I had a slight issue with getting my fadeOut function to work, but after much trial and error and testing it finally works!
+I had a slight issue with getting my fadeOut function to work, but after much trial and error and testing it finally works! I also had some trouble at first with Devise gem and the RedCarpet gems, but YouTube is such a glorious place, full of tutorials - which totally helped me move forward in this project.
 
 ## Things that didn't work
 * Getting the blog post forms to actually show a markdown editor so the user is able to easily create a post
