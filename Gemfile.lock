@@ -160,6 +160,9 @@ GEM
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    social-share-button (0.3.3)
+      coffee-rails
+      sass-rails
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -218,6 +221,7 @@ DEPENDENCIES
   sanitize
   sass-rails (~> 5.0)
   simple_form (~> 3.2, >= 3.2.1)
+  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data

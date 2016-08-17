@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get '/intake' => 'welcome#intake'
 
   root 'welcome#index'
+
+  resources :posts, only: [:show]
+
+  root to: "posts#show"
 end

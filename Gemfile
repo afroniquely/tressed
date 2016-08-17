@@ -33,6 +33,10 @@ gem 'pygments.rb', '~> 0.6.3'
 gem 'wysiwyg-rails'
 gem 'sanitize'
 
+#social sharing
+gem 'social-share-button'
+
+
 # Adds Font Awesome
 gem 'font-awesome-sass'
 

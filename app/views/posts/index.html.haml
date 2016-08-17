@@ -22,11 +22,12 @@
   - @posts.each do |post|
     %h3.postTitles= link_to post.title, post
 
-    %p
-    Published:
-    = time_ago_in_words(post.created_at)
-    ago by
-    = post.user.email
-
+    %p.blurbs
+      Published:
+      = time_ago_in_words(post.created_at)
+      ago by
+      = post.user.email
+%br/
+%hr/
 %div.row
   %p= link_to "Create A New Post", new_post_path
