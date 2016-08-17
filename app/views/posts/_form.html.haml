@@ -15,7 +15,15 @@
   .blurbs this form accepts
   %a.blurblink{:href => "http://lab.lepture.com/editor/markdown", :target => "_blank"} markdown
   %br/
-  = f.text_area :content
+  = f.text_area :content, :id => 'edits'
   %br/
   %br/
   = f.button :submit
+
+  / Initialize the editor.
+  :javascript
+    $(function() {
+        $('#edits').froalaEditor()
+          height: 300
+          theme: 'royal'
+    });

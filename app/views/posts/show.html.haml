@@ -1,40 +1,48 @@
 / SEE THE INDIVIDUAL POSTS
-%header.top-bar
-  %h3#SiteTitle.top-bar-left
-    = link_to "Tressed", root_path
+!!!
+%html
+  %head
+    %title Tressed App
+    %link{:href => "../css/froala_style.min.css", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    %header.top-bar
+      %h3#SiteTitle.top-bar-left
+        = link_to "Tressed", root_path
 
-  %div#useract.top-bar-right
-    - if user_signed_in?
-      = link_to 'About', about_path
+      %div#useract.top-bar-right
+        - if user_signed_in?
+          = link_to 'About', about_path
+          = link_to 'All Posts', posts_path
+          = link_to 'New Post', new_post_path
+          = link_to('<button type="button" class="hibye button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
+        - else
+          = link_to 'About', about_path
+          = link_to 'All Posts', posts_path
+          = link_to 'New Post', new_post_path
+          = link_to'<button type="button" class="hibye2 button">Join Now</button>'.html_safe, new_user_registration_path
+          = link_to'<button type="button" class="hibye2 button">Login</button>'.html_safe, new_user_session_path
+
+    %div.row
+      %h1= @post.title
+      %p.fr-view
+        = @post.content.html_safe
+
+      %div#share_box
+      / Twitter
+      %a{:onclick => "javascript:window.open('http://twitter.com/share?text=#{@post.title} by @afroniquely - &url=#{url_for([@post, {only_path: false}])}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"}
+        %i.fa.fa-twitter
+      / Facebook
+      %a{:onclick => "javascript:window.open('http://www.facebook.com/sharer.php?u=#{url_for([@post, {only_path: false}])}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"}
+        %i.fa.fa-facebook
+      / Google Plus
+      %a{:onclick => "javascript:window.open('https://plus.google.com/share?url=#{url_for([@post, {only_path: false}])}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"}
+        %i.fa.fa-google-plus
+
+      %br/
+      = link_to 'Edit', edit_post_path(@post)
+      = link_to 'Delete', post_path(@post), method: :delete, data: {confirm: "Are you positive about this?"}
+      = link_to 'Back', :back
       = link_to 'All Posts', posts_path
-      = link_to 'New Post', new_post_path
-      = link_to('<button type="button" class="hibye button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
-    - else
-      = link_to 'About', about_path
-      = link_to 'All Posts', posts_path
-      = link_to 'New Post', new_post_path
-      = link_to'<button type="button" class="hibye2 button">Join Now</button>'.html_safe, new_user_registration_path
-      = link_to'<button type="button" class="hibye2 button">Login</button>'.html_safe, new_user_session_path
-
-%div.row
-  %h1= @post.title
-  %p= markdown @post.content
-  %div#share_box
-  / Twitter
-  %a{:onclick => "javascript:window.open('http://twitter.com/share?text=#{@post.title} by @afroniquely - &url=#{url_for([@post, {only_path: false}])}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"}
-    %i.fa.fa-twitter
-  / Facebook
-  %a{:onclick => "javascript:window.open('http://www.facebook.com/sharer.php?u=#{url_for([@post, {only_path: false}])}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"}
-    %i.fa.fa-facebook
-  / Google Plus
-  %a{:onclick => "javascript:window.open('https://plus.google.com/share?url=#{url_for([@post, {only_path: false}])}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"}
-    %i.fa.fa-google-plus
-
-  %br/
-  = link_to 'Edit', edit_post_path(@post)
-  = link_to 'Delete', post_path(@post), method: :delete, data: {confirm: "Are you positive about this?"}
-  = link_to 'Back', :back
-  = link_to 'All Posts', posts_path
 
 
 

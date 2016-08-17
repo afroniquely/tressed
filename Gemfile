@@ -29,6 +29,10 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'redcarpet'
 gem 'pygments.rb', '~> 0.6.3'
 
+# Update Post Editor - Froala
+gem 'wysiwyg-rails'
+gem 'sanitize'
+
 # Adds Font Awesome
 gem 'font-awesome-sass'
 

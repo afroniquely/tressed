@@ -1,24 +1,36 @@
 / EDIT INDIVIDUAL POST
-%header.top-bar
-  %h3#SiteTitle.top-bar-left
-    = link_to "Tressed", root_path
+!!! 5
+%html
+  %head
+    %title Tressed App
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css", :rel => "stylesheet"}/
+    %link{:href => "../css/themes/royal.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js", :type => "text/javascript"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js", :type => "text/javascript"}
+  %body
+    %header.top-bar
+      %h3#SiteTitle.top-bar-left
+        = link_to "Tressed", root_path
 
-  %div#useract.top-bar-right
-    - if user_signed_in?
-      = link_to 'About', about_path
-      = link_to 'All Posts', posts_path
-      = link_to 'New Post', new_post_path
-      = link_to('<button type="button" class="hibye button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
-    - else
-      = link_to 'About', about_path
-      = link_to 'All Posts', posts_path
-      = link_to 'New Post', new_post_path
-      = link_to'<button type="button" class="hibye2 button">Join Now</button>'.html_safe, new_user_registration_path
+      %div#useract.top-bar-right
+        - if user_signed_in?
+          = link_to 'About', about_path
+          = link_to 'All Posts', posts_path
+          = link_to 'New Post', new_post_path
+          = link_to('<button type="button" class="hibye button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
+        - else
+          = link_to 'About', about_path
+          = link_to 'All Posts', posts_path
+          = link_to 'New Post', new_post_path
+          = link_to'<button type="button" class="hibye2 button">Join Now</button>'.html_safe, new_user_registration_path
 
-%div.row
-  Now Editing
-  %h2= @post.title
+    %div.row
+      Now Editing
+      %h2= @post.title
 
-  = render 'form'
+      %div.fr-view
+        = render 'form'
 
-  = link_to 'Cancel', post_path
+      = link_to 'Cancel', post_path
+
+
