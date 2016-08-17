@@ -6,17 +6,11 @@
     %ul
       - @post.errors.full_messages.each do |msg|
         %li= msg
-  = f.label :title, "Journal Title"
-  %br/
+  = f.label :title, "Journal Title:"
   = f.text_field :title
   %br/
-  = f.label :content, "Write your journal entry here"
-  %br/
-  .blurbs this form accepts
-  %a.blurblink{:href => "http://lab.lepture.com/editor/markdown", :target => "_blank"} markdown
-  %br/
+  = f.label :content, "Write your journal entry here:"
   = f.text_area :content, :id => 'edits'
-  %br/
   %br/
   = f.button :submit
 

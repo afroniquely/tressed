@@ -38,13 +38,16 @@
       %p.fr-view
         = @post.content.html_safe
 
-      %div#share_box
-      / SHARE BUTTONS HERE
-      = social_share_button_tag(@post.title)
-
       %br/
       %hr/
-      = link_to 'View All Posts', posts_path
+      %div#share_box
+      / SHARE BUTTONS HERE
+      %p share this journal
+      = social_share_button_tag(@post.title)
+      %hr/
+      %div.postactions
+        = link_to 'View All Posts', posts_path
+    %br/
 
 
 

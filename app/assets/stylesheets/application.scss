@@ -154,6 +154,24 @@ a.typeform-share.link.hibye2 {
   }
 }
 
+// div.postactions {
+//   text-align: center;
+// }
+
+.postactions a {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: white;
+  background: $purple;
+  padding: 10px;
+  &:hover{
+    background: darken($purple, 8.5%);
+    color: $gold;
+  }
+}
+
 /*====================================
   STYLE THE FLASH NOTICES
 =====================================*/
