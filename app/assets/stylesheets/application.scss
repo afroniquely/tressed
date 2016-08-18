@@ -172,6 +172,14 @@ a.typeform-share.link.hibye2 {
   }
 }
 
+a.biglink{
+  font:1.2rem 'Montserrat', sans-serif;
+  font-weight:700;
+  text-align:center;
+  text-decoration:none;
+  text-transform: uppercase;
+  color:$pink;
+}
 /*====================================
   STYLE THE FLASH NOTICES
 =====================================*/
@@ -393,7 +401,7 @@ a.btn{
   height:40px;
   padding:1.5em 5%;
   overflow:hidden;
-  background:$teal;
+  background:$pink;
 }
 
 .btn-close{

@@ -17,7 +17,8 @@
           = link_to 'About', about_path
           = link_to 'All Posts', posts_path
           = link_to 'New Post', new_post_path
-          = link_to('<button type="button" class="hibye button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
+          = link_to "Hair Profile", intake_path
+          = link_to('<button type="button" class="hibye2 button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
         - else
           = link_to 'About', about_path
           = link_to 'All Posts', posts_path
@@ -30,10 +31,6 @@
       %hr/
       %div.postactions= link_to 'Cancel Editing This Journal', post_path
       %hr/
-
-      %div.fr-view
+      %div
         = render 'form'
-
-      = link_to 'Cancel', post_path
-
 

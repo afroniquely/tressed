@@ -14,7 +14,8 @@
           = link_to 'About', about_path
           = link_to 'All Posts', posts_path
           = link_to 'New Post', new_post_path
-          = link_to('<button type="button" class="hibye button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
+          = link_to "Hair Profile", intake_path
+          = link_to('<button type="button" class="hibye2 button">Logout</button>'.html_safe, destroy_user_session_path, :method => :delete)
         - else
           = link_to 'About', about_path
           = link_to 'All Posts', posts_path
@@ -30,9 +31,10 @@
         ago by
         = @post.user.email
       %hr/
-      = link_to 'Edit Post', edit_post_path(@post)
-      \&vert;
-      = link_to 'Delete It', post_path(@post), method: :delete, data: {confirm: "Are you positive about this?"}
+      %div.postactions
+        = link_to 'Edit This Post', edit_post_path(@post)
+        \&vert; OR &vert;
+        = link_to 'Delete It', post_path(@post), method: :delete, data: {confirm: "Are you positive about this?"}
       %br/
       %hr/
       %p.fr-view
@@ -42,7 +44,7 @@
       %hr/
       %div#share_box
       / SHARE BUTTONS HERE
-      %p share this journal
+      %p share this journal entry
       = social_share_button_tag(@post.title)
       %hr/
       %div.postactions

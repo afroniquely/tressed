@@ -1,3 +1,4 @@
+/ABOUT PAGE
 %body
   %div#background
     %header.home-top-bar.cf
@@ -7,6 +8,7 @@
         - if user_signed_in?
           = link_to "About", about_path
           = link_to "Hair Profile", intake_path
+          = link_to 'All Posts', posts_path
           = link_to "Update Login", edit_user_registration_path
           = link_to('Logout', destroy_user_session_path, :method => :delete)
         - else
@@ -15,7 +17,9 @@
       - if user_signed_in?
         %h2.fancy About Us
         %h3.fancy
-          Tressed is a member community created by Afroniquely You Blogazine (www.afroniquelyu.com), that aims to bridge the gap between natural hair care and society's taboo.
+          Tressed is a member community created by Afroniquely You Blogazine (
+          %a.biglink{:href => "http://www.afroniquelyu.com", :target => "blank"}> www.afroniquelyu.com
+          ), that aims to bridge the gap between natural hair care and society's taboo.
           %br/
         %p watch the video documentary below
         %videobtn
@@ -27,9 +31,12 @@
               .content
                 %iframe{:frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/VJaDJtK_8xM?rel=0&controls=0&showinfo=0&autoplay=0", :width => "641"}
 
+
       - else
         %h3.fancy
-          Tressed is a member community created by Afroniquely You Blogazine (www.afroniquelyu.com), that aims to bridge the gap between natural hair care and society's taboo.
+          Tressed is a member community created by Afroniquely You Blogazine (
+          %a.biglink{:href => "http://www.afroniquelyu.com", :target => "blank"}> www.afroniquelyu.com
+          ), that aims to bridge the gap between natural hair care and society's taboo.
           %br/
           Welcome to Tressed!
         %div#useracted
@@ -37,7 +44,4 @@
           %p.blurbs
             already a member?
             = link_to "login", new_user_session_path
-
-
-
 
